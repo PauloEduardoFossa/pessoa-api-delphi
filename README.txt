@@ -1,3 +1,11 @@
+## Como executar
+
+1. Execute PessoaAPI.exe
+2. A API estará disponível em http://localhost:9000
+3. Execute o Cliente.exe
+4. Informe a URL da API e utilize as funcionalidades
+
+
 # SERVIDOR (API) - Pessoa API
 
 ## 📌 Descrição
