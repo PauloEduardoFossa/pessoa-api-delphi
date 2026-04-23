@@ -6,6 +6,19 @@
 4. Informe a URL da API e utilize as funcionalidades
 
 
+## 🧪 Testes via Postman
+
+Foi incluída uma collection do Postman para facilitar os testes da API.
+
+Importar o arquivo localizado em:
+
+/postman/PessoaAPI.postman_collection.json
+
+Configurar a variável baseUrl como:
+
+http://localhost:9000
+
+
 # SERVIDOR (API) - Pessoa API
 
 ## 📌 Descrição
