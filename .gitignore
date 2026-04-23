@@ -3,7 +3,6 @@
 *.identcache
 *.local
 *.stat
-*.res
 *.tvsconfig
 
 # Pastas
