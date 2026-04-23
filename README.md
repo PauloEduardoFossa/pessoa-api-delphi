@@ -1,25 +1,4 @@
-## Como executar
-
-1. Execute PessoaAPI.exe
-2. A API estará disponível em http://localhost:9000
-3. Execute o Cliente.exe
-4. Informe a URL da API e utilize as funcionalidades
-
-
-## 🧪 Testes via Postman
-
-Foi incluída uma collection do Postman para facilitar os testes da API.
-
-Importar o arquivo localizado em:
-
-/postman/PessoaAPI.postman_collection.json
-
-Configurar a variável baseUrl como:
-
-http://localhost:9000
-
-
-# SERVIDOR (API) - Pessoa API
+# Pessoa API - Delphi
 
 ## 📌 Descrição
 
@@ -33,29 +12,13 @@ A inserção em lote foi implementada utilizando queries preparadas e transaçõ
 
 ---
 
-## 🧱 Arquitetura
-
-O projeto segue o padrão de 3 camadas:
-
-- **Controller** → exposição da API (rotas REST)
-- **Service** → regras de negócio
-- **Repository** → acesso a dados (FireDAC)
-
-Estruturas adicionais:
-
-- **Model** → entidades
-- **Thread** → integração assíncrona de CEP
-- **Infra** → conexão e inicialização do banco
-
----
-
 ## 🚀 Como executar
 
-1. Compilar o projeto `PessoaAPI`
-2. Executar o `.exe`
-3. A API estará disponível em: http://localhost:9000
-
-
+1. Executar `PessoaAPI.exe`  
+2. A API estará disponível em:  
+   http://localhost:9000  
+3. Executar `Cliente.exe`  
+4. Informar a URL da API no cliente  
 
 Na primeira execução:
 - O banco SQLite será criado automaticamente
@@ -86,6 +49,46 @@ Na primeira execução:
 
 ---
 
+## 🧪 Testes
+
+### Postman
+
+Collection disponível em: /postman/PessoaAPI.postman.json
+
+
+
+---
+
+### Inserção em lote (teste de carga)
+
+Arquivo disponível:/pessoas_50000.json
+
+
+Utilizar no endpoint: POST /pessoas/lote
+
+Objetivo:
+- validar performance
+- testar processamento em volume
+- demonstrar estratégia de inserção em lote
+
+---
+
+## 🧱 Arquitetura
+
+O projeto segue o padrão de 3 camadas:
+
+- **Controller** → exposição da API (rotas REST)
+- **Service** → regras de negócio
+- **Repository** → acesso a dados (FireDAC)
+
+Estruturas adicionais:
+
+- **Model** → entidades
+- **Thread** → integração assíncrona de CEP
+- **Infra** → conexão e inicialização do banco
+
+---
+
 ## 🔄 Integração ViaCEP
 
 - Executada em **Thread**
@@ -113,20 +116,11 @@ Na primeira execução:
 
 ---
 
-## 📌 Observações
-
-- Não é necessário instalar banco de dados
-- Projeto focado em clareza arquitetural e organização
-- Estrutura preparada para fácil evolução
-
-
-# Cliente Pessoa API
+# 💻 Cliente Pessoa API
 
 ## 📌 Descrição
 
-Aplicação cliente desenvolvida em Delphi (VCL) para consumo da API REST PessoaAPI.
-
-Permite realizar operações de cadastro, consulta, exclusão, inserção em lote e integração de CEP.
+Aplicação cliente desenvolvida em Delphi (VCL) para consumo da API REST.
 
 ---
 
@@ -144,45 +138,28 @@ Permite realizar operações de cadastro, consulta, exclusão, inserção em lot
 
 ---
 
-## 🔗 Configuração
+## ▶️ Como utilizar
 
-Antes de utilizar, informe a URL da API: http://localhost:9000
-
-
----
-
-## ▶️ Como executar
-
-1. Compilar o projeto Cliente
-2. Executar o `.exe`
-3. Informar a URL da API
-4. Utilizar os botões da interface
+1. Executar o Cliente
+2. Informar a URL da API: http://localhost:9000
+3. Utilizar os botões da interface
 
 ---
 
 ## 📋 Operações disponíveis
 
 ### CRUD
-
 - Inserir
 - Alterar
 - Excluir
 - Buscar por ID
 - Listar
 
----
-
 ### Lote
-
-- Permite envio de arquivo JSON com múltiplos registros
-- Ideal para testes de performance
-
----
+- Envio de múltiplos registros via JSON
 
 ### Integração CEP
-
-- Dispara a rotina de atualização via API ViaCEP
-- Execução assíncrona no servidor
+- Dispara atualização via ViaCEP no servidor
 
 ---
 
@@ -191,14 +168,6 @@ Antes de utilizar, informe a URL da API: http://localhost:9000
 - Grid com dados retornados
 - Campos de edição para cadastro
 - Área de visualização do JSON retornado
-
----
-
-## ⚙️ Tecnologias utilizadas
-
-- Delphi VCL
-- THTTPClient
-- JSON (System.JSON)
 
 ---
 
