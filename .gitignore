@@ -1,0 +1,19 @@
+# Delphi
+*.dcu
+*.identcache
+*.local
+*.stat
+*.res
+*.tvsconfig
+
+# Pastas
+__history/
+Win32/
+Win64/
+Debug/
+Release/
+*.exe
+
+# Outros
+*.log
+*.tmp
