@@ -206,10 +206,16 @@ Essa separação evita acoplamento, facilita manutenção e permite trocar parte
 
 
 View      → Tela do cliente
+
 Controller→ Rotas REST no Horse
+
 Model     → Entidades Pessoa/Endereco
+
 Service   → Regras de negócio
+
 Repository→ SQL e banco
+
 Infra     → Conexão e criação do banco
+
 Thread    → Integração ViaCEP em segundo plano
 
