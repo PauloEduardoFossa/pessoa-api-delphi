@@ -176,3 +176,40 @@ Aplicação cliente desenvolvida em Delphi (VCL) para consumo da API REST.
 - Cliente simples focado em testes e validação da API
 - Interface objetiva para demonstrar funcionalidades
 - Tratamento de erros baseado no retorno da API
+
+
+
+
+## 🚀 Explicação
+Estruturei o projeto seguindo uma separação próxima ao MVC, adaptada para uma API REST em 3 camadas. 
+A View ficou no cliente VCL, responsável apenas pela interação com o usuário. 
+O Controller ficou no servidor, concentrando as rotas Horse e tratando entrada e saída JSON. 
+As regras de negócio ficaram nos Services, como validações, transações e inserção em lote. 
+A persistência ficou nos Repositories, isolando o acesso ao banco via FireDAC. 
+Os Models representam as entidades do domínio, e a camada Infra concentra conexão e inicialização do banco. 
+Essa separação evita acoplamento, facilita manutenção e permite trocar partes do sistema com menor impacto.
+
+
+- Model: Criei os Models para representar as entidades do domínio e facilitar o transporte de dados entre Controller, Service e Repository.
+
+- View: Mantive a camada visual separada no projeto cliente, evitando que a interface acessasse diretamente o banco de dados.
+
+- Controller: Criei os Controllers para concentrar as rotas REST e manter a comunicação HTTP separada das regras de negócio.
+
+-  Service: Usei Services para concentrar regras de negócio e manter os Controllers simples e desacoplados da persistência.
+
+- Repository: Os Repositories foram criados para isolar a persistência e evitar SQL espalhado pela aplicação.
+
+- Infra: A camada Infra concentra configurações técnicas da aplicação, como conexão e inicialização do banco.
+
+- Thread: Separei a rotina de CEP em Thread para executar o processamento em segundo plano sem travar a aplicação principal.
+
+
+View      → Tela do cliente
+Controller→ Rotas REST no Horse
+Model     → Entidades Pessoa/Endereco
+Service   → Regras de negócio
+Repository→ SQL e banco
+Infra     → Conexão e criação do banco
+Thread    → Integração ViaCEP em segundo plano
+
